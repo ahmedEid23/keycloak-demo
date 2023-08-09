@@ -1,0 +1,73 @@
+/* Apply a basic reset to remove default margin and padding */
+html, body, div, h1, h2, h3, h4, h5, h6, p, table, th, td, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Set a background color for the entire page */
+body {
+  background-color: #f7f9fc;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* Center the content vertically and horizontally */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Style the buttons */
+button {
+  padding: 12px 24px;
+  margin: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Style the table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+th {
+  background-color: #f7f9fc;
+  color: #555;
+}
+
+/* Hide empty table rows */
+tr:empty {
+  display: none;
+}
+
+/* Style the table rows */
+tr {
+  transition: background-color 0.3s;
+}
+
+tr:hover {
+  background-color: #f0f5ff;
+}
