@@ -4,15 +4,22 @@ import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
     keycloak.init({
       config: {
-        realm: 'keycloak-angular-sandbox',
+        realm: 'testRealm',
         url: 'http://localhost:8080',
-        clientId: 'keycloak-angular'
+        clientId: 'frontend'
       },
+      // config: {
+      //   realm: 'luftborn-dss-dev',
+      //   url: 'https://lemur-8.cloud-iam.com/auth',
+      //   clientId: 'frontend'
+      // },
       initOptions: {
         onLoad: 'check-sso',
         silentCheckSsoRedirectUri:
@@ -23,7 +30,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, KeycloakAngularModule],
+  imports: [BrowserModule, AppRoutingModule, KeycloakAngularModule, FormsModule, HttpClientModule],
   providers: [
     {
       provide: APP_INITIALIZER,
